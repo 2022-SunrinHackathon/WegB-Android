@@ -3,6 +3,18 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="primary">#6F89E3</color>
+    <color name="primary_tonedown">#596592</color>
+    <color name="red">#E36F6F</color>
+
+    <color name="white_10">#FCFDFE</color>
+    <color name="white_20">#F2F3F5</color>
+    <color name="white_30">#D2D3D7</color>
+    <color name="white_40">#9597A0</color>
+    <color name="black_10">#22252E</color>
+    <color name="black_20">#454750</color>
+    <color name="black_30">#7E818A</color>
+
     <color name="materialGray0">#f8f9fa</color>
     <color name="materialGray1">#f1f3f5</color>
     <color name="materialGray2">#e9ecef</color>
@@ -20,7 +32,7 @@
     <color name="flatLightBlue">#00b0ff</color>
     <color name="flatGreen">#1abc9c</color>
     <color name="flatYellow">#f1c40f</color>
-    <color name="flatRed">#e74c32</color>
+    <color name="flatRed">#e74c32</color> 
     <color name="flatBlack">#121212</color>
 
     <color name="edcan_blue">#00b8d4</color>

@@ -18,6 +18,7 @@
         <meta-data android:name="com.kakao.sdk.AppKey" android:value="d4dc21476e01dd654275d2afb8c70121"/>
         <activity
             android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -5,9 +5,6 @@
     <attr name="button1TextColor" format="color"/>
     <attr name="button1BackgroundColor" format="color"/>
 
-    <attr name="button2TextColor" format="color"/>
-    <attr name="button2BackgroundColor" format="color"/>
-
     <attr name="inputTextColor" format="color"/>
     <attr name="inputBackgroundColor" format="color"/>
 </resources>
