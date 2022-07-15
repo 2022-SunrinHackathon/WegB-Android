@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.SunrinHackaton" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.SunrinHackaton" parent="Theme.AppCompat.Light">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/primary_tonedown</item>
@@ -19,7 +19,7 @@
         <item name="button1BackgroundColor">@color/primary</item>
 
         <item name="inputTextColor">@color/black_30</item>
-        <item name="inputBackgroundColor">?attr/editTextBackground</item>
+        <item name="inputBackgroundColor">@color/white_20</item>
 
         <!-- Custom Style -->
         <item name="android:textViewStyle">@style/customTextStyle</item>
