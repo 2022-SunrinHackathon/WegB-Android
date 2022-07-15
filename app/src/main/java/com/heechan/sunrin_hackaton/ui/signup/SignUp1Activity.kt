@@ -19,5 +19,9 @@ import com.heechan.sunrin_hackaton.ui.login.LoginViewModel
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_up1)
         binding.lifecycleOwner = this
         binding.vm = viewModel
+
+        binding.btnSignUpClose.setOnClickListener {
+            finish()
+        }
     }
 }

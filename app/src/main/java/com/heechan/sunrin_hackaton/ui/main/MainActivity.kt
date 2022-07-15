@@ -1,21 +1,26 @@
-package com.heechan.sunrin_hackaton
+package com.heechan.sunrin_hackaton.ui.main
 
-import android.content.pm.PackageInfo
-import android.content.pm.PackageManager
+import android.content.Intent
 import android.os.Bundle
-import android.util.Base64
-import android.util.Log
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import net.daum.mf.map.api.MapView
-import java.security.MessageDigest
-import java.security.NoSuchAlgorithmException
+import androidx.databinding.DataBindingUtil
+import com.heechan.sunrin_hackaton.R
+import com.heechan.sunrin_hackaton.databinding.ActivityMainBinding
+import com.heechan.sunrin_hackaton.ui.login.LoginActivity
 
 
 class MainActivity : AppCompatActivity() {
+    lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.lifecycleOwner = this
+
+        binding.btnMainGotoLogin.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 //    private fun getHashKey() {

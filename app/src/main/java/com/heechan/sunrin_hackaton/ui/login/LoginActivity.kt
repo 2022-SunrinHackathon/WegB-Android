@@ -24,5 +24,9 @@ class LoginActivity : AppCompatActivity() {
             Log.d("login", viewModel.password.value!!)
         }
 
+        binding.btnLoginClose.setOnClickListener {
+            finish()
+        }
+
     }
 }
