@@ -6,15 +6,13 @@
     <data>
         <variable
             name="vm"
-            type="com.heechan.sunrin_hackaton.ui.login.LoginViewModel" />
+            type="com.heechan.sunrin_hackaton.ui.signup.SignUp1ViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.login.LoginActivity"
-
-        android:background="#fcfdfe">
+        tools:context=".ui.signup.SignUp1Activity">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/line1"
@@ -42,7 +40,7 @@
 
             android:src="@drawable/ic_logo"
 
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="99dp"
 
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="로그인하고, 더 많은 기능을 사용하세요!"
+            android:text="위그비에 오신것을 환영해요!"
             android:textColor="@color/black_30"
             android:textSize="16sp"
             android:textFontWeight="500"
@@ -67,14 +65,13 @@
             />
 
         <EditText
-            android:id="@+id/edt_login_email"
+            android:id="@+id/edt_signUp_nickName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:text="@={vm.email}"
-            android:hint="이메일 주소"
-            android:inputType="textEmailAddress"
-            android:layout_marginTop="136dp"
+            android:text="@={vm.nickname}"
+            android:hint="닉네임 (한글로 입력)"
+            android:layout_marginTop="120dp"
 
             app:layout_constraintTop_toBottomOf="@id/txt1"
             app:layout_constraintStart_toStartOf="@id/line1"
@@ -82,31 +79,62 @@
             />
 
         <EditText
-            android:id="@+id/edt_login_password"
+            android:id="@+id/edt_signUp_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:text="@={vm.email}"
+            android:hint="이메일 주소"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="4dp"
+
+            app:layout_constraintTop_toBottomOf="@id/edt_signUp_nickName"
+            app:layout_constraintStart_toStartOf="@id/line1"
+            app:layout_constraintEnd_toEndOf="@id/line2"
+            />
+
+        <EditText
+            android:id="@+id/edt_signUp_password"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
             android:text="@={vm.password}"
-            android:hint="비밀번호"
+            android:hint="비밀번호 (8자 이상)"
             android:inputType="textPassword"
 
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="24dp"
 
-            app:layout_constraintTop_toBottomOf="@id/edt_login_email"
+            app:layout_constraintTop_toBottomOf="@id/edt_signUp_email"
+            app:layout_constraintStart_toStartOf="@id/line1"
+            app:layout_constraintEnd_toEndOf="@id/line2"
+            />
+
+        <EditText
+            android:id="@+id/edt_signUp_passwordRe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:text="@={vm.passwordRe}"
+            android:hint="비밀번호 확인"
+            android:inputType="textPassword"
+
+            android:layout_marginTop="4dp"
+
+            app:layout_constraintTop_toBottomOf="@id/edt_signUp_password"
             app:layout_constraintStart_toStartOf="@id/line1"
             app:layout_constraintEnd_toEndOf="@id/line2"
             />
 
         <Button
-            android:id="@+id/btn_login_submit"
+            android:id="@+id/btn_signUp_submit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:text="로그인"
+            android:text="회원가입"
 
             android:layout_marginTop="42dp"
 
-            app:layout_constraintTop_toBottomOf="@id/edt_login_password"
+            app:layout_constraintTop_toBottomOf="@id/edt_signUp_passwordRe"
             app:layout_constraintStart_toStartOf="@id/line1"
             app:layout_constraintEnd_toEndOf="@id/line2"
             />
@@ -116,14 +144,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="위그비 계정이 없으신가요?"
+            android:text="계정이 이미 있으신가요? "
             android:textColor="@color/black_30"
             android:textFontWeight="500"
 
-            android:layout_marginTop="40dp"
-
             app:layout_constraintEnd_toStartOf="@id/txt3"
-            app:layout_constraintTop_toBottomOf="@id/btn_login_submit"
+            app:layout_constraintTop_toBottomOf="@id/btn_signUp_submit"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/line1"
 
             app:layout_constraintHorizontal_chainStyle="packed"
@@ -134,18 +161,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text=" 위그비 계정이 없으신가요?"
+            android:text=" 로그인하기"
             android:textColor="@color/primary_tonedown"
             android:textFontWeight="500"
 
-            android:layout_marginTop="40dp"
-
             app:layout_constraintStart_toEndOf="@id/txt2"
-            app:layout_constraintTop_toBottomOf="@id/btn_login_submit"
+            app:layout_constraintTop_toBottomOf="@id/btn_signUp_submit"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/line2"
             />
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
