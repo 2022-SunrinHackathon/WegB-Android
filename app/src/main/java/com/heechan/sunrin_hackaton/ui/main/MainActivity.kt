@@ -2,25 +2,39 @@ package com.heechan.sunrin_hackaton.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.heechan.sunrin_hackaton.R
+import com.heechan.sunrin_hackaton.data.Provider
+import com.heechan.sunrin_hackaton.data.model.User
 import com.heechan.sunrin_hackaton.databinding.ActivityMainBinding
 import com.heechan.sunrin_hackaton.ui.login.LoginActivity
+import com.heechan.sunrin_hackaton.ui.login.LoginViewModel
 
+val provider : Provider = Provider()
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
+    val viewModel: MainViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.lifecycleOwner = this
+        binding.vm = viewModel
 
         binding.btnMainGotoLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Toast.makeText(this, provider.userData.value.toString(), Toast.LENGTH_LONG).show()
     }
 
 //    private fun getHashKey() {

@@ -10,15 +10,24 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.heechan.sunrin_hackaton.R
 import com.heechan.sunrin_hackaton.data.model.User
+import com.heechan.sunrin_hackaton.data.repository.AuthRepositoryImpl
 import com.heechan.sunrin_hackaton.databinding.ActivityLoginBinding
 import com.heechan.sunrin_hackaton.databinding.ActivitySignUp1Binding
 import com.heechan.sunrin_hackaton.ui.login.LoginViewModel
 import com.heechan.sunrin_hackaton.ui.main.MainActivity
+import com.heechan.sunrin_hackaton.ui.main.provider
+import com.heechan.sunrin_hackaton.uitl.Result
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class SignUp1Activity : AppCompatActivity() {
     lateinit var binding: ActivitySignUp1Binding
-    lateinit var auth: FirebaseAuth
-    lateinit var db: FirebaseFirestore
+//    lateinit var auth: FirebaseAuth
+//    lateinit var db: FirebaseFirestore
+
+    lateinit var authDB : AuthRepositoryImpl
 
     val viewModel: SignUp1ViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,8 +37,7 @@ class SignUp1Activity : AppCompatActivity() {
         binding.lifecycleOwner = this
         binding.vm = viewModel
 
-        auth = FirebaseAuth.getInstance()
-        db = FirebaseFirestore.getInstance()
+        authDB = AuthRepositoryImpl()
 
         binding.btnSignUpClose.setOnClickListener {
             finish()
@@ -42,29 +50,24 @@ class SignUp1Activity : AppCompatActivity() {
                 address = "주소값"
             )
 
-            auth.createUserWithEmailAndPassword(userData.email, viewModel.password.value!!)
-                .addOnSuccessListener {
+            CoroutineScope(Dispatchers.IO).launch {
+                val result : Int = authDB.signUp(userData, viewModel.password.value!!)
 
-                    db.collection("user").add(userData)
-                        .addOnSuccessListener {
+                if(result == Result.ok){
+                    withContext(Dispatchers.Main){
 
-                            Toast.makeText(this, "환영합니다!", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@SignUp1Activity, "환영합니다!", Toast.LENGTH_LONG).show()
+                        finish()
 
-                            val intent = Intent(this, MainActivity::class.java)
-                            intent.putExtra("userData", userData)
-
-                            startActivity(intent)
-                            finish()
-
-                        }
-                        .addOnFailureListener {
-                            Toast.makeText(this, "회원가입에 실패했습니다.", Toast.LENGTH_LONG).show()
-                        }
-
+                    }
                 }
-                .addOnFailureListener {
-                    Toast.makeText(this, "회원가입에 실패했습니다.", Toast.LENGTH_LONG).show()
+                else{
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(this@SignUp1Activity, "회원가입에 실패 했습니다.", Toast.LENGTH_LONG).show()
+                    }
                 }
+            }
+
 
         }
     }

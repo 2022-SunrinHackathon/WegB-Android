@@ -5,16 +5,13 @@ import java.io.Serializable
 
 data class User(
     @Query("user_email")
-    val email : String,
-
-//    @Query("user_pw")
-//    val password : String,
+    val email : String = "",
 
     @Query("user_name")
-    val name : String,
+    val name : String = "",
 
     @Query("user_address")
-    val address : String,
+    val address : String = "",
 
     @Query("user_share_count")
     val shareCount : Int = 0,
