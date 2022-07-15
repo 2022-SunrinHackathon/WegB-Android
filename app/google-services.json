@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "514459992550",
+    "project_id": "wegb-7729d",
+    "storage_bucket": "wegb-7729d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514459992550:android:9553118271a34fe4921627",
+        "android_client_info": {
+          "package_name": "com.heechan.sunrin_hackaton"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514459992550-7t74collr1rq5afvfvoucr6eiuh13qt6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQjWjFVhOpbHGTr1ZP3B99RNSNg1Y9LVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514459992550-7t74collr1rq5afvfvoucr6eiuh13qt6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
