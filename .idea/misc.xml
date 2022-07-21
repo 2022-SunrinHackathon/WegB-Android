@@ -8,9 +8,10 @@
         <entry key="..\:/Android/SunrinHackaton/app/src/main/res/drawable/ic_logo.xml" value="0.1205" />
         <entry key="..\:/Android/SunrinHackaton/app/src/main/res/font/font.xml" value="0.22314814814814815" />
         <entry key="..\:/Android/SunrinHackaton/app/src/main/res/layout/activity_login.xml" value="0.2" />
-        <entry key="..\:/Android/SunrinHackaton/app/src/main/res/layout/activity_main.xml" value="0.21" />
+        <entry key="..\:/Android/SunrinHackaton/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Android/SunrinHackaton/app/src/main/res/layout/activity_sign_up1.xml" value="0.1" />
         <entry key="..\:/Android/SunrinHackaton/app/src/main/res/layout/activity_sign_up2.xml" value="0.25" />
+        <entry key="..\:/Android/SunrinHackaton/app/src/main/res/layout/activity_write.xml" value="0.25" />
         <entry key="..\:/Android/SunrinHackaton/app/src/main/res/xml/network_security_config.xml" value="0.1" />
       </map>
     </option>

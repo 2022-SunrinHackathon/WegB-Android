@@ -4,14 +4,14 @@ import android.system.StructTimespec
 import java.io.Serializable
 
 data class Accident(
-    val type : MutableList<Int>,
-    val verti : Float,
-    val hori : Float,
-    val desc : String,
-    val imgUrl : String,
-    val youtubeList : String,
-    val shareCount : Int,
-    val likeCount : Int,
-    val writer : String,
-    val id : Int,
+    val type: String = "",
+    val verti: Float = 0F,
+    val hori: Float = 0F,
+    val desc: String = "",
+    var imgUrl: String = "",
+    val youtubeList: String = "",
+    val shareCount: Int = 0,
+    val likeCount: Int = 0,
+    val writer: String = "",
+    val id: Int = 0,
 ) : Serializable
